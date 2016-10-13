@@ -17,8 +17,12 @@
 
 /**开始输入时*/
 @property (nonatomic, copy)void (^upNum)();
+/**正在输入时*/
+@property (nonatomic, copy)void (^didChange)();
+
 /**点击return时*/
 @property (nonatomic, copy)void (^downNum)();
+
 
 
 

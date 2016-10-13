@@ -17,7 +17,7 @@
 //输入提示、输入的字号、最多输入lengthNum个字、将textField添加到subView上
 - (instancetype)initPlaceholder:(NSString *)placeholderStr  textFont:(float)font lengthNum:(NSInteger)lengthNum addSubView:(id)subView{
     if (self = [super init]) {
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor clearColor];
         self.textColor = [UIColor blackColor];
         self.font = [UIFont systemFontOfSize:font];
         self.placeholder = placeholderStr;
@@ -32,12 +32,20 @@
 
 #pragma mark- UITextFieldDelegate
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
-    self.upNum();
+    if (self.upNum) {
+        self.upNum();
+    }
 }
 - (void)reTextFieldDidChange:(UITextField *)textField{//输入文本时调用
     UITextRange *selectedRange = [textField markedTextRange];
     NSString * newText = [textField textInRange:selectedRange];
     if(newText.length>0) return;
+    
+    //将输入的某个字符替换成另一个字符
+    textField.text = [textField.text stringByReplacingOccurrencesOfString:@" " withString:@""];
+    if (self.didChange) {
+        self.didChange();
+    }
     //解决联想输入的问题
     if (textField.text.length > _lengthNum) {
         textField.text = [textField.text substringToIndex:_lengthNum];
@@ -47,12 +55,15 @@
     return (textField.text.length - range.length + string.length) <= _lengthNum;
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField{
-        self.text = textField.text;
+    self.text = textField.text;
 }
 
 #pragma mark- 让键盘消失
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{//点击了return键
-    self.downNum();
+    if (self.downNum) {
+        self.downNum();
+    }
+    
     return YES;
 }
 
