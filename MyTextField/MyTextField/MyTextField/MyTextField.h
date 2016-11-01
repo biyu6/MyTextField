@@ -9,9 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MyTextField : UITextField<UITextFieldDelegate>
-
-
-
 //输入提示、输入的字号、最多输入lengthNum个字、将textField添加到subView上
 - (instancetype)initPlaceholder:(NSString *)placeholderStr  textFont:(float)font lengthNum:(NSInteger)lengthNum addSubView:(id)subView;
 

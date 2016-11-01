@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D444C491DC847F6001BEE1D /* MyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D444C471DC847F6001BEE1D /* MyTextField.m */; };
 		2D8803591DAF6998008F9CF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8803581DAF6998008F9CF6 /* main.m */; };
 		2D88035C1DAF6998008F9CF6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D88035B1DAF6998008F9CF6 /* AppDelegate.m */; };
 		2D8803641DAF6999008F9CF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D8803631DAF6999008F9CF6 /* Assets.xcassets */; };
@@ -14,7 +15,6 @@
 		2D8803721DAF6999008F9CF6 /* MyTextFieldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8803711DAF6999008F9CF6 /* MyTextFieldTests.m */; };
 		2D88037D1DAF6999008F9CF6 /* MyTextFieldUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D88037C1DAF6999008F9CF6 /* MyTextFieldUITests.m */; };
 		2D88038C1DAF69BB008F9CF6 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D88038B1DAF69BB008F9CF6 /* MyViewController.m */; };
-		2D88038F1DAF6A1E008F9CF6 /* MyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D88038E1DAF6A1E008F9CF6 /* MyTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D444C471DC847F6001BEE1D /* MyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTextField.m; sourceTree = "<group>"; };
+		2D444C481DC847F6001BEE1D /* MyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTextField.h; sourceTree = "<group>"; };
 		2D8803541DAF6998008F9CF6 /* MyTextField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTextField.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D8803581DAF6998008F9CF6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2D88035A1DAF6998008F9CF6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -50,8 +52,6 @@
 		2D88037E1DAF6999008F9CF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D88038A1DAF69BB008F9CF6 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		2D88038B1DAF69BB008F9CF6 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
-		2D88038D1DAF6A1E008F9CF6 /* MyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTextField.h; sourceTree = "<group>"; };
-		2D88038E1DAF6A1E008F9CF6 /* MyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +79,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D444C461DC847CC001BEE1D /* MyTextField */ = {
+			isa = PBXGroup;
+			children = (
+				2D444C471DC847F6001BEE1D /* MyTextField.m */,
+				2D444C481DC847F6001BEE1D /* MyTextField.h */,
+			);
+			path = MyTextField;
+			sourceTree = "<group>";
+		};
 		2D88034B1DAF6998008F9CF6 = {
 			isa = PBXGroup;
 			children = (
@@ -102,12 +111,11 @@
 		2D8803561DAF6998008F9CF6 /* MyTextField */ = {
 			isa = PBXGroup;
 			children = (
+				2D444C461DC847CC001BEE1D /* MyTextField */,
 				2D88035A1DAF6998008F9CF6 /* AppDelegate.h */,
 				2D88035B1DAF6998008F9CF6 /* AppDelegate.m */,
 				2D88038A1DAF69BB008F9CF6 /* MyViewController.h */,
 				2D88038B1DAF69BB008F9CF6 /* MyViewController.m */,
-				2D88038D1DAF6A1E008F9CF6 /* MyTextField.h */,
-				2D88038E1DAF6A1E008F9CF6 /* MyTextField.m */,
 				2D8803631DAF6999008F9CF6 /* Assets.xcassets */,
 				2D8803651DAF6999008F9CF6 /* LaunchScreen.storyboard */,
 				2D8803681DAF6999008F9CF6 /* Info.plist */,
@@ -280,7 +288,7 @@
 				2D88038C1DAF69BB008F9CF6 /* MyViewController.m in Sources */,
 				2D88035C1DAF6998008F9CF6 /* AppDelegate.m in Sources */,
 				2D8803591DAF6998008F9CF6 /* main.m in Sources */,
-				2D88038F1DAF6A1E008F9CF6 /* MyTextField.m in Sources */,
+				2D444C491DC847F6001BEE1D /* MyTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +520,7 @@
 				2D8803831DAF6999008F9CF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2D8803841DAF6999008F9CF6 /* Build configuration list for PBXNativeTarget "MyTextFieldTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +529,7 @@
 				2D8803861DAF6999008F9CF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2D8803871DAF6999008F9CF6 /* Build configuration list for PBXNativeTarget "MyTextFieldUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +538,7 @@
 				2D8803891DAF6999008F9CF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

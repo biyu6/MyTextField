@@ -19,7 +19,8 @@
 
 @interface MyViewController ()
 @property (nonatomic, strong)MyTextField *tf;
-
+/***/
+@property (nonatomic, strong)UILabel *lab;
 @end
 @implementation MyViewController
 
@@ -31,25 +32,27 @@
 }
 - (void)textFieldTest{
     //TF背景
-    UIView *tfView = [[UIView alloc]initWithFrame:CGRectMake(100, 300, 200, 30)];
+    UIView *tfView = [[UIView alloc]initWithFrame:CGRectMake(10, 400, 350, 30)];
     tfView.backgroundColor = [UIColor whiteColor];
     tfView.layer.cornerRadius = 15;
     tfView.layer.masksToBounds = YES;
     [self.view addSubview:tfView];
     //按钮
-    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(150, 0, 50, 30)];
+    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(300, 0, 50, 30)];
     [btn setTitle:@"按钮" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     btn.backgroundColor = [UIColor redColor];
     [btn addTarget:self action:@selector(clickedBtn) forControlEvents:UIControlEventTouchUpInside];
     [tfView addSubview:btn];
     
-    
+    _lab = [[UILabel alloc]initWithFrame:CGRectMake(30, 180, 350, 30)];
+    _lab.backgroundColor = [UIColor yellowColor];
+    [self.view addSubview:_lab];
     
     
     //==============TF调用示例============================TF调用示例====
-    _tf = [[MyTextField alloc]initPlaceholder:@"请输入balabala" textFont:15 lengthNum:8 addSubView:tfView];
-    _tf.frame = CGRectMake(15, 0, 135, 30);
+    _tf = [[MyTextField alloc]initPlaceholder:@"注意：最多输入8个字符" textFont:15 lengthNum:8 addSubView:tfView];
+    _tf.frame = CGRectMake(15, 0, 285, 30);
     //可在此设置UItextField的其他属性
     
     //==============TF调用示例============================TF调用示例====
@@ -71,7 +74,9 @@
     };
 }
 - (void)clickedBtn{//点击了按钮
+    [self KBDisappear];
     NSLog(@"_tf最终接收的文字====%@",_tf.text);
+    _lab.text = _tf.text;
 }
 
 #pragma mark- 让键盘消失
